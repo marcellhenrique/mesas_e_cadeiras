@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>Cadastro de Aluguel</title>
+</head>
+<body>
+
+<h2>Cadastrar Aluguel</h2>
+
+<form method="post" action="{% url 'cadastrar_aluguel' %}">
+    {% csrf_token %}
+    
+    <!-- Formulário para Transacao -->
+    <label for="{{ form_transacao.data_aluguel.id_for_label }}">Data de Aluguel:</label>
+    {{ form_transacao.data_aluguel }}
+    
+    <label for="{{ form_transacao.data_devolucao.id_for_label }}">Data de Devolução:</label>
+    {{ form_transacao.data_devolução }}
+    
+    <label for="{{ form_transacao.taxa_de_entrega.id_for_label }}">Taxa de Entrega:</label>
+    {{ form_transacao.taxa_de_entrega }}
+    
+    <!-- Adicione mais campos conforme necessário para a Transacao -->
+    
+    <hr>
+    
+    <!-- Formulário para Mesas -->
+    <label for="{{ form_mesas.estoque.id_for_label }}">Quantidade de Mesas:</label>
+    {{ form_mesas.estoque }}
+    
+    <!-- Adicione mais campos conforme necessário para Mesas -->
+    
+    <hr>
+    
+    <!-- Formulário para Cadeiras -->
+    <label for="{{ form_cadeiras.estoque.id_for_label }}">Quantidade de Cadeiras:</label>
+    {{ form_cadeiras.estoque }}
+    
+    <!-- Adicione mais campos conforme necessário para Cadeiras -->
+    
+    <hr>
+
+    <input type="submit" value="Cadastrar Aluguel">
+</form>
+
+</body>
+</html>
