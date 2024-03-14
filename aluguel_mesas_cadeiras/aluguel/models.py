@@ -26,7 +26,7 @@ class Transação(models.Model):
     taxa_de_entrega = models.DecimalField(max_digits=7, decimal_places=2)
     valor_total = models.DecimalField(max_digits=7, decimal_places=2)
     endereco = models.CharField(max_length=100)
-    cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE)
+    cliente = models.ForeignKey(Clientes, default=None, on_delete=models.CASCADE)
     dano_mesas = models.IntegerField()
     dano_cadeiras = models.IntegerField()
 
